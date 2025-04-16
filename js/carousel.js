@@ -106,3 +106,25 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoplay();
   }
   
+  document.addEventListener('DOMContentLoaded', () => {
+    const quoteBlock = document.querySelector('.carousel-quote');
+    if (!quoteBlock) return;
+  
+    const quotes = quoteBlock.querySelectorAll('blockquote');
+    let current = 0;
+  
+    function showQuote(index) {
+      quotes.forEach((q, i) => {
+        q.classList.toggle('active', i === index);
+      });
+    }
+  
+    function nextQuote() {
+      current = (current + 1) % quotes.length;
+      showQuote(current);
+    }
+  
+    showQuote(current);
+    setInterval(nextQuote, 8000); // change quote every 8s
+  });
+  
