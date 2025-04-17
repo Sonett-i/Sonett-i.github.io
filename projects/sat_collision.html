@@ -31,7 +31,7 @@
   <main>
     <section class="deck">
 
-    <div class="deck-card">
+    <div class="deck-card" id="Top">
         <div class="video-player">
             <video autoplay loop muted playsinline>
             <source src="../img/SAT/Unity_uiRqHSj67I.mp4" type="video/mp4">
@@ -42,14 +42,14 @@
             </p>              
         </div>
       </div>
-        <div class="deck-card">
+        <div class="deck-card" id="Overview">
           <h3>Overview</h3>
           <p>
             This project showcases a 2D implementation of the Separating Axis Theorem (SAT) for real-time collision detection between convex polygons. It includes visual debugging for projected axes, overlap intervals, contact normals, and penetration resolution.
           </p>
         </div>        
 
-        <div class="deck-card">
+        <div class="deck-card" id="CoreConcepts">
           <h3>Core Concepts</h3>
           <ul>
             <li>Projection of polygon edges onto normal axes</li>
@@ -59,17 +59,20 @@
           </ul>
         </div>        
       
-      <section class="video-embed">
-        <iframe 
-          src="https://www.youtube.com/embed/BG9Q84i63Is?si=sgwb9O8xxeANvf8p"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen>
-        </iframe>
-      </section>
+      <div class="deck-card" id="YouTubeDemo">
+        <h3>YouTube Demo</h3>
+        <section class="video-embed">
+          <iframe 
+            src="https://www.youtube.com/embed/BG9Q84i63Is?si=sgwb9O8xxeANvf8p"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </section>
+      </div>
 
-      <section class="deck-card">
+      <section class="deck-card" id="Theory">
         <h3>Theory: SAT Axis Projection</h3>
         <p class="caption">
           <a href="https://www.desmos.com/calculator/emme14iksf">Desmos</a> rendering of the Separating Axis Theorem. Polygons are projected onto a candidate axis (gray), testing overlap of projection intervals (<code>a<sub>min</sub></code> to <code>a<sub>max</sub></code> vs. <code>b<sub>min</sub></code> to <code>b<sub>max</sub></code>). The Boolean logic and inequalities shown on the left evaluate whether a separation exists.
@@ -89,7 +92,7 @@
       </section>
       
 
-      <section class="deck-card">
+      <section class="deck-card" id="SatCollisioncs">
         <h3>SATCollision.cs (C#)</h3>
         <p>
           This class provides a full implementation of the Separating Axis Theorem (SAT) for 2D collision detection in Unity. It includes support for both polygon-polygon and circle-polygon collisions. The algorithm projects vertices onto candidate axes (perpendicular to edges) and checks for overlap. If no separating axis is found, it calculates the minimum intersection depth and normal vector to resolve the collision. The system includes debugging visualizations, vector projections, and MTV (Minimum Translation Vector) resolution logic to prevent tunneling and ensure consistent separation.
@@ -98,7 +101,7 @@
           <code class="language-csharp" data-src="src/SAT/SAT.cs">Loading...</code>
         </pre>
       </section>
-      <div class="deck-card">
+      <div class="deck-card" id="Demo">
         <p><a class="btn" href="https://sonetti.itch.io/separating-axis-theorem" target="_blank">Play the Demo on Itch.io</a></p>
       </div>
     </section>

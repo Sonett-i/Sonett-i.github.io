@@ -109,6 +109,29 @@
     border-radius: 4px;
     font-family: monospace;
   }
+
+  .deck-card.bg-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white; /* Optional: improve readability over image */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .deck-card.bg-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* Optional overlay for contrast */
+    z-index: 0;
+  }
+  
+  .deck-card.bg-image > * {
+    position: relative;
+    z-index: 1;
+  }
+  
     
   footer {
     padding: 1rem;
@@ -126,7 +149,7 @@
     align-items: center;
     gap: 0.5rem;
   }
-  
+
   .carousel-track {
     display: flex;
     transition: transform 0.4s ease;
@@ -603,3 +626,116 @@ pre.code-wrapper {
     color: #fff;
   }
   
+  /* Spotify */
+.spotify-embed {
+  margin: 1.5rem 0;
+  max-width: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.spotify-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.spotify-card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spotify-card iframe {
+  border-radius: 8px;
+  width: 100%;
+}
+
+.spotify-card .caption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #ccc;
+  text-align: center;
+}
+
+.audio-track {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+  max-width: 600px;
+}
+
+.audio-track h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #ddd;
+}
+
+.audio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.audio-card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.audio-card h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #ddd;
+  text-align: center;
+}
+
+.audio-card audio {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.audio-card .caption {
+  font-size: 0.9rem;
+  color: #aaa;
+  text-align: center;
+}
+
+/* Smaller carousel images only for music sheet carousels */
+.music-carousel .carousel-slide {
+  max-height: 860px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.deck-card audio {
+  display: block;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+.music-intro-wrapper {
+  background: linear-gradient(to bottom right, #181818, #1f1f1f);
+  padding: 4rem 2rem;
+  background-image: url('../img/bg/textureBG00.png'); /* Optional */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}

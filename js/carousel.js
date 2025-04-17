@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSlide = 0;
     const slides = carousel.querySelectorAll('.carousel-slide');
     const track = carousel.querySelector('.carousel-track');
-    const autoplay = carousel.dataset.autoplay !== undefined;
+    const autoplay = carousel.dataset.autoplay !== "false";
     const useFade = carousel.classList.contains('fade');
     let intervalId = null;
   
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     caption.textContent = image.alt || '';
     modal.style.display = 'flex';
     dots.innerHTML = '';
-    
+
     images.forEach((_, i) => {
       const dot = document.createElement('button');
       dot.className = 'image-dot';
