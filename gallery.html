@@ -7,38 +7,40 @@
   <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-    <a class="back-link" href="index.html">← Back to Portfolio</a>
+  <a class="back-link" href="index.html">← Back to Portfolio</a>
   <header>
     <h1>Gallery</h1>
-    <p>A collection of images from various projects and creative experiments.</p>
+    <p>A collection of full-screen, high-fidelity, and abstract visuals generated through code or created as part of experimental projects.</p>
   </header>
 
   <main>
-    <section class="project-grid">
-      <div class="project-card">
-        <img src="img/recursion_thumb.png" alt="Recursion Screenshot" />
-        <h3>Recursion</h3>
-        <p>A looping immersive sim exploring agency, control, and identity through environmental storytelling.</p>
+    <section class="gallery-grid">
+      <div class="gallery-item">
+        <img src="img/gallery/RPG204-PlayerExit_SRwMouf9C7.png" alt="Procedural render 1" class="clickable" />
       </div>
-
-      <div class="project-card">
-        <img src="img/detectiveking_thumb.png" alt="Detective King Screenshot" />
-        <h3>Detective King</h3>
-        <p>A social deduction prototype using Unity’s event system and modular scene logic.</p>
+      <div class="gallery-item">
+        <img src="img/gallery/Unity_B5UZ8ijo4r.png" alt="Generative glitch render" class="clickable" />
       </div>
-
-      <div class="project-card">
-        <img src="img/music_thumb.png" alt="Music Composition" />
-        <h3>Scored Music</h3>
-        <p>Orchestral and ambient compositions blending synths with traditional textures.</p>
+      <div class="gallery-item">
+        <img src="img/gallery/Unity_zPtIXP43Tr.png" alt="Fragmented terrain shader" class="clickable" />
       </div>
-
-      <!-- Add more cards as needed -->
+      <div class="gallery-item">
+        <video class="clickable" muted>
+          <source src="img/gallery/Unity_vMGMAWSEPa.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <!-- Add more gallery items here -->
     </section>
   </main>
 
   <footer>
     &copy; 2025 Sam Catcheside – All rights reserved
   </footer>
+  <div class="lightbox-modal" id="lightbox">
+    <img class="lightbox-image" src="" alt="Expanded image" />
+    <video class="lightbox-video" controls></video>
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  </div>  
+  <script src="js/image-modal.js" defer></script>
 </body>
 </html>

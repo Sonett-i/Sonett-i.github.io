@@ -765,3 +765,106 @@ pre.code-wrapper {
 #scrollTopBtn.show {
   opacity: 1;
 }
+
+/*  Gallery */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #111;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 240px; /* or whatever fixed height works for your layout */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-item img:hover {
+  filter: brightness(1.1);
+  transition: filter 0.2s ease;
+}
+
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+.lightbox-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.lightbox-video {
+  display: none;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+.video-overlay-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.video-overlay-wrapper video {
+  display: block;
+  border-radius: 8px;
+}
+
+.video-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  pointer-events: none;
+  opacity: 0.8;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.video-overlay-wrapper:hover .video-play-icon {
+  opacity: 1;
+}
