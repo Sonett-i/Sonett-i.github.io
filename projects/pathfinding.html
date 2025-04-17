@@ -1,53 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pathfinding – Sam Catcheside</title>
-  <link rel="stylesheet" href="../css/main.css" />
-  <script src="../js/carousel.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pathfinding – Sam Catcheside</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/carousel.js" defer></script>
+    <script src="../js/loadCode.js" defer></script>
+    <script src="../js/toc-sidebar.js" defer></script>
+    <!-- Prism Theme + Line Numbers -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet">
+
+    <!-- Prism Core + Language -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-csharp.min.js" defer></script>
+
+    <!-- Line Number Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js" defer></script> 
 </head>
 <body>
     <a class="back-link" href="../index.html">← Back to Portfolio</a>
   <a class="back-link2" href="../projects.html">← Back to Projects</a>
 
   <header>
-    <h1>SAT Collision Detection</h1>
-    <p>Robust 2D collision detection using the Separating Axis Theorem (SAT)</p>
+    <h1>AI Pathfinding</h1>
+    <p>Pathfinding Algorithms</p>
   </header>
 
   <main>
     <section class="deck">
-      <div class="deck-card">
+
+    <div class="deck-card" id="Top">
+        <div class="video-player">
+            <video autoplay loop muted playsinline>
+            <source src="../img/Pathfinding/Unity_2GTkLinsvx.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+            <p class="caption">
+                Real-time visual feedback of search paths and cost layers using A* and Dijkstra algorithms.
+            </p>              
+        </div>
+    </div>
+      <div class="deck-card" id="Overview">
         <h3>Overview</h3>
-        <p>This project demonstrates a real-time implementation of SAT for collision detection between convex polygons. It includes visualization tools for debugging normals, penetration depth, and contact points.</p>
+        <p>
+            This project showcases core AI pathfinding algorithms implemented in C#, including Dijkstra's Algorithm, A*, and Breadth-First Search. The system visualizes node states, path costs, and algorithm behavior in real-time.
+        </p>            
       </div>
 
-      <div class="deck-card">
+      <div class="deck-card" id="CoreConcepts">
         <h3>Core Concepts</h3>
         <ul>
-          <li>Convex polygon projections onto axes</li>
-          <li>Detection of overlap intervals</li>
-          <li>Resolution using minimum penetration vector</li>
-          <li>Dynamic object support (velocity-aware)</li>
-        </ul>
+            <li>Grid-based movement with walkable and blocked nodes</li>
+            <li>Heuristic-based cost calculation (Manhattan distance)</li>
+            <li>Open/closed set management and node state transitions</li>
+            <li>Visual debugging of paths, visited nodes, and frontier expansion</li>
+          </ul>          
       </div>
+      
+      <div class="deck-card" id="YouTubeDemo">
+        <h3>YouTube Demo</h3>
+        <section class="video-embed">
+            <iframe 
+              src="https://www.youtube.com/embed/VWwvBOPb4sw?si=LgTavHavV8Zc1-03"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </section>
+      </div>
+      
 
-      <div class="deck-card">
-        <h3>Demo</h3>
-        <video autoplay loop muted playsinline class="carousel-video">
-          <source src="media/sat_demo.mp4" type="video/mp4">
-        </video>
-        <p class="caption">Live debug rendering of contact normals and overlap resolution</p>
-      </div>
+      <section class="deck-card" id="AStar">
+        <h3>A* Algorithm (C#)</h3>
+        <p>
+            A* combines Dijkstra’s guaranteed optimal pathfinding with a heuristic function to prioritize promising nodes. It evaluates each step using <code>f(n) = g(n) + h(n)</code>, where <code>g</code> is the cost from start and <code>h</code> is the estimated cost to the goal.
+        </p>
+        <pre class="code-wrapper line-numbers" data-file="AStarAgent.cs">
+        <code class="language-csharp" data-src="src/Pathfinding/AStarAgent.cs">Loading...</code>
+        </pre>
+      </section>
 
-      <div class="deck-card">
-        <h3>Technologies</h3>
-        <ul>
-          <li>C# with custom rendering loop</li>
-          <li>Debug overlays for normals and contact vectors</li>
-        </ul>
-      </div>
+      <section class="deck-card" id="Dijkstra">
+        <h3>Dijkstra's Algorithm (C#)</h3>
+        <p>
+            Dijkstra’s algorithm calculates the shortest path from a starting node to all other nodes, using a uniform cost function. It explores exhaustively and guarantees the optimal path, but lacks the heuristic acceleration A* provides.
+        </p>
+        <pre class="code-wrapper line-numbers" data-file="DijkstrasAgent.cs">
+        <code class="language-csharp" data-src="src/Pathfinding/DijkstrasAgent.cs">Loading...</code>
+        </pre>
+      </section>
+      
+      <section class="deck-card" id="GridTile">
+        <h3>GridTile/Node (C#)</h3>
+        <p>Defines the core structure and logic for individual nodes within the pathfinding grid. Each tile tracks its grid position, movement cost metrics (g, h, f), and its visual state for real-time debugging. It supports dynamic terrain types (e.g., slow tiles, obstacles) with cost modifiers and color-coded rendering. The class also includes utility methods for resetting, updating costs, and calculating Manhattan distance heuristics used in A*.</p>
+        <pre class="code-wrapper line-numbers" data-file="GridTile.cs">
+        <code class="language-csharp" data-src="src/Pathfinding/GridTile.cs">Loading...</code>
+        </pre>
+      </section>
     </section>
   </main>
 

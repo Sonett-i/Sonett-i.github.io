@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSGL – C# OpenGL Rendering Engine</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <script src="../js/carousel.js" defer></script>
+
+  <script src="../js/loadCode.js" defer></script>
+  <script src="../js/toc-sidebar.js" defer></script>
+
+  <!-- Prism Theme + Line Numbers -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet">
+
+  <!-- Prism Core + Language -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-csharp.min.js" defer></script>
+
+  <!-- Line Number Plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js" defer></script> 
+
+</head>
+<body>
+    <a class="back-link" href="../index.html">← Back to Portfolio</a>
+  <a class="back-link2" href="../projects.html">← Back to Projects</a>
+
+  <header>
+    <h1>CSGL</h1>
+    <p>C# OpenGL Render Engine</p>
+  </header>
+
+  <main>
+    <section class="deck">
+        <div class="deck-card" id="Top">
+            <div class="video-player">
+                <video autoplay loop muted playsinline>
+                <source src="../img/CSGL/Interface_axO2EO9jCB.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+                <p class="caption">
+                    Rendering of various shapes and geometry in 3D. 
+                </p>              
+            </div>
+        </div>
+      <div class="deck-card" id="overview">
+        <h3>Overview</h3>
+        <p>This project explores low-level graphics programming using OpenGL and the OpenTK wrapper for C#. It features a custom render loop, shader pipeline, and basic buffer management.</p>
+      </div>
+
+      <div class="deck-card" id="concepts">
+        <h3>Core Concepts</h3>
+        <ul>
+            <li>Shader pipeline (Vertex/Fragment GLSL shaders)</li>
+            <li>Manual VAO/VBO/EBO management in OpenTK</li>
+            <li>Custom camera with view/projection matrices</li>
+            <li>Texture sampling and fragment coloring</li>
+          </ul>          
+      </div>
+
+      <div class="deck-card" id="technologies">
+        <h3>Technologies</h3>
+        <ul>
+          <li>C#, OpenGL</li>
+          <li>Custom vertex buffers</li>
+        </ul>
+      </div>
+
+      <div class="deck-card" id="media">
+        <h3>Development Media</h3>
+        <div class="carousel" data-autoplay>
+          <button class="carousel-btn prev">‹</button>
+          <div class="carousel-track">
+            <video src="../img/CSGL/devenv_ifdQtt9Sg2.mp4" class="carousel-slide clickable" autoplay loop></video>
+            <video src="../img/CSGL/Interface_aBTS6h3TLC.mp4" class="carousel-slide clickable" autoplay loop></video>
+            <video src="../img/CSGL/Interface_nYMbKfXYOw.mp4" class="carousel-slide clickable" autoplay loop></video>
+            <video src="../img/CSGL/Interface_O6fDnKEMqS.mp4" class="carousel-slide clickable" autoplay loop></video>
+            <video src="../img/CSGL/NVIDIA_Share_5v4Bk8hjnr.mp4" class="carousel-slide clickable" autoplay loop></video>
+            <video src="../img/CSGL/NVIDIA_Share_96IN83YeDD.mp4" class="carousel-slide clickable" autoplay loop></video>
+            <video src="../img/CSGL/NVIDIA_Share_b0KzVSwAmS.mp4" class="carousel-slide clickable" autoplay loop></video>
+          </div>
+          <button class="carousel-btn next">›</button>
+          <div class="carousel-dots"></div>
+        </div>        
+      </div>
+
+      <section class="deck-card" id="mesh">
+        <h3>Mesh</h3>
+        <p>
+            The <b>mesh</b> class is the core wrapper that handles all draw logic and buffer coordination for a 3D mesh. It constructs and links VAO, VBO, and EBO instances, handles shader activation, and binds textures before issuing draw calls. It also manages uniforms for transformation matrices, lighting, and camera data. This class is responsible for abstracting the OpenGL pipeline into a clean object-oriented interface for rendering dynamic or static geometry.
+        </p>
+        <pre class="code-wrapper line-numbers" data-file="Mesh.cs">
+        <code class="language-csharp" data-src="src/CSGL/Mesh.cs">Loading...</code>
+        </pre>
+      </section>
+
+      <section class="deck-card" id="vao">
+        <h3>VAO.cs (Vertex Array Object)</h3>
+        <p>
+            The <b>VAO</b> (Vertex Array Object)manages the Vertex Array Object, which stores references to vertex buffer layouts. It defines the structure of vertex attributes (position, normal, tangent, and UV) and links them to specific shader layout locations. This class encapsulates the logic required to configure and reuse attribute bindings across multiple meshes or shaders.
+        </p>
+        <pre class="code-wrapper line-numbers" data-file="VAO.cs">
+        <code class="language-csharp" data-src="src/CSGL/VAO.cs">Loading...</code>
+        </pre>
+      </section>
+
+      <section class="deck-card" id="vbo">
+        <h3>VBO.cs (Vertex Buffer Object)</h3>
+        <p>
+            The <b>VBO</b> (Vertex Buffer Object) is responsible for generating and uploading vertex data to the GPU. It stores vertex attributes in a contiguous float array and transfers them to the GPU using OpenGL’s <code>BufferData</code> call. It supports customizable usage hints (e.g., <code>StaticDraw</code>) to optimize performance based on how often the data changes.
+        </p>
+        <pre class="code-wrapper line-numbers" data-file="VBO.cs">
+        <code class="language-csharp" data-src="src/CSGL/VBO.cs">Loading...</code>
+        </pre>
+      </section>
+
+      <section class="deck-card" id="ebo">
+        <h3>EBO.cs (Element Buffer Object)</h3>
+        <p>
+            The <b>EBO</b> (Element Buffer Object) manages index data used for drawing mesh elements with <code>glDrawElements</code>. It ensures only unique vertices are stored in the buffer and re-used efficiently using index referencing. This helps reduce memory overhead and improves draw call efficiency when rendering complex meshes.
+        </p>
+        <pre class="code-wrapper line-numbers" data-file="EBO.cs">
+        <code class="language-csharp" data-src="src/CSGL/EBO.cs">Loading...</code>
+        </pre>
+      </section>
+
+      <section class="deck-card" id="vertexshader">
+        <h3>default.vert (Vertex Shader)</h3>
+        <p>
+          The vertex shader transforms incoming vertex positions using a combined model-view-projection matrix. It also passes interpolated normals, UVs, and tangents to the fragment shader. This stage lays the groundwork for lighting and texturing by preparing surface data in world or view space.
+        </p>
+        <pre class="code-wrapper line-numbers" data-file="default.vert">
+          <code class="language-glsl" data-src="src/CSGL/default.vert">Loading...</code>
+        </pre>
+      </section>      
+
+      <section class="deck-card" id="fragmentshader">
+        <h3>default.frag (Fragment Shader)</h3>
+        <p>
+          The fragment shader performs per-pixel lighting using a basic Lambertian diffuse model. It combines sampled texture color and surface normal direction to calculate the final fragment color. The shader supports UV-based texture mapping and light direction control via uniforms.
+        </p>
+        <pre class="code-wrapper line-numbers" data-file="default.frag">
+          <code class="language-glsl" data-src="src/CSGL/default.frag">Loading...</code>
+        </pre>
+      </section>
+      
+      <section class="deck-card" id="componentclass">
+        <h3>Component.cs</h3>
+        <p>
+          <code>Component.cs</code> defines the base class for all engine-side components in CSGL. It includes virtual <code>Start()</code>, <code>Update()</code>, and <code>Instance()</code> methods to support behavior injection and runtime configuration via JSON. Components are attached to entities and registered by type for dynamic construction, enabling flexible ECS-like architecture without overcomplication.
+        </p>
+        <pre class="code-wrapper line-numbers" data-file="Component.cs">
+          <code class="language-csharp" data-src="src/CSGL/Component.cs">Loading...</code>
+        </pre>
+      </section>
+
+      <section class="deck-card" id="transformhierarchy">
+        <h3>Transform Hierarchy</h3>
+        <p>This diagram illustrates how each Transform holds local position, rotation, and scale, while also referencing a parent, creating a hierarchical structure.</p>
+        <img src="../img/CSGL/TransformHierarchy.png" alt="Transform hierarchy diagram" />
+      </section>
+
+      <section class="deck-card" id="transformmatrices">
+        <h3>Transform Matrix: TRS Composition</h3>
+        <p>
+          In CSGL, every object’s transformation is composed using a TRS matrix: <strong>Translation</strong>, <strong>Rotation</strong>, and <strong>Scale</strong>. These are combined into a single model matrix used in the vertex shader for world positioning.
+        </p>
+      
+        <p>
+          The multiplication order is:
+        </p>
+      
+        <pre><code>ModelMatrix = Translation × Rotation × Scale</code></pre>
+      
+        <p>
+          This order matters — because matrix multiplication is not commutative. Applying scale before rotation ensures the object scales in its own local space. Translation is applied last, so the final position of the object is based on its rotated and scaled result.
+        </p>
+      
+        <p>
+          When applied to a vertex:
+        </p>
+      
+        <pre><code>v' = ModelMatrix × v = T × (R × (S × v))</code></pre>
+      
+        <p>
+          In a hierarchy, transformations propagate from parent to child. Each child’s world matrix is calculated like this:
+        </p>
+      
+        <pre><code>WorldMatrix = ParentWorldMatrix × (T × R × S)</code></pre>
+      
+        <p>
+          This allows complex nested structures, like articulated limbs or cameras attached to moving objects, to inherit transformations from their parents while retaining local adjustments.
+        </p>
+      </section>
+      
+
+      <section class="deck-card" id="transformcomponent">
+        <h3>Transform.cs</h3>
+        <p>
+          <code>Transform.cs</code> handles hierarchical object transformations including local and world position, rotation, and scale. It supports parent-child relationships, automatic matrix updates, and vector utilities such as forward and right direction calculation. This class is foundational for spatial management in CSGL and integrates with the rendering pipeline via TRS matrices. It also provides methods for relative rotation (e.g., <code>RotateAround()</code>) and deferred transformation propagation.
+        </p>
+        <pre class="code-wrapper line-numbers" data-file="Transform.cs">
+          <code class="language-csharp" data-src="src/CSGL/Transform.cs">Loading...</code>
+        </pre>
+      </section>      
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Sam Catcheside – All rights reserved
+  </footer>
+</body>
+</html>
