@@ -8,7 +8,6 @@
 
   <script src="../js/carousel.js" defer></script>
   <script src="../js/toc-sidebar.js" defer></script>
-
 </head>
 <body>
   <a class="back-link" href="../index.html">← Back to Portfolio</a>
@@ -20,8 +19,7 @@
 
   <main>
     <section class="deck">
-
-      <div class="deck-card">
+      <div class="deck-card" id="Media">
         <h3>Media</h3>
         <div class="carousel" data-autoplay>
           <button class="carousel-btn prev">‹</button>
@@ -30,36 +28,126 @@
             <img src="../img/Recursion/Redacted01.png" alt="Screenshot 2" class="carousel-slide clickable" />
             <img src="../img/Recursion/Redacted02.png" alt="Screenshot 3" class="carousel-slide clickable" />
             <video src="../img/Recursion/room.mp4" class="carousel-slide clickable" autoplay loop></video>
-            <img src="../img/Recursion/01.png" alt="Screenshot 3" class="carousel-slide clickable" />
-            <img src="../img/Recursion/02.png" alt="Screenshot 3" class="carousel-slide clickable" />
+            <img src="../img/Recursion/01.png" alt="Screenshot 4" class="carousel-slide clickable" />
+            <img src="../img/Recursion/02.png" alt="Screenshot 5" class="carousel-slide clickable" />
+            <video src="../img/Recursion/Clock.mp4" class="carousel-slide clickable" autoplay loop></video>
           </div>
           <button class="carousel-btn next">›</button>
           <div class="carousel-dots"></div>
-        </div>        
+        </div>
       </div>
 
-      <div class="deck-card">
-        <h3>Overview</h3>
-        <p>Recursion is a looping immersive sim focused on player agency, corporate surrealism, and philosophical themes. The game explores identity, control, and resistance through atmospheric worldbuilding and nonlinear storytelling.</p>
+      <div class="deck-card" id="TechnicalOverview">
+        <h3>Technical Overview</h3>
+        <ul>
+          <li><strong>Engine:</strong> Unity 6000.0.39f1 (URP)</li>
+          <li><strong>Language:</strong> C#</li>
+          <li><strong>Target Platform:</strong> PC (Standalone Build, WebGL prototype)</li>
+          <li><strong>Core Systems:</strong> Trigger volumes, door access system, object interaction, audio cue system, environmental timers, state persistence</li>
+          <li><strong>Visuals:</strong> Shader Graph, Post-Processing Stack, Dynamic Lighting</li>
+          <li><strong>Audio:</strong> Custom-composed ambient layers, FMOD planned (future)</li>
+        </ul>
+      </div>
+      
+      <div class="deck-card" id="DevRoadMap">
+        <h3>Development Roadmap</h3>
+        <ol>
+          <li><strong>Pre-Production:</strong> World design, core mechanic prototyping, narrative framing (complete)</li>
+          <li><strong>Vertical Slice:</strong> Fully functional loop system with basic interaction and environmental storytelling <b>(in progress)</b></li>
+          <li><strong>Expansion Phase:</strong> Modular room generation, AI-driven surveillance logic, alternate loop outcomes (planned)</li>
+          <li><strong>Polish & Testing:</strong> Performance optimization, accessibility, UX passes, polish lighting/audio transitions</li>
+          <li><strong>Release Candidate:</strong> Export standalone build for showcase and public playtesting</li>
+        </ol>
+      </div>
+
+      <div class="deck-card" id="GameSummary">
+        <h3>Game Summary</h3>
+        <p>
+          Recursion is a first-person immersive sim set within a sprawling, looping office facility overtaken by a rogue AI. The game blends exploration, environmental storytelling, and philosophical choice. Players must uncover the mystery of the facility, their role in it, and ultimately decide whether to resist or embrace the systems at play.
+        </p>
+      </div>
+
+      <div class="deck-card" id="CoreLoop">
+        <h3>Core Gameplay Loop</h3>
+        <ul>
+          <li>Explore the office complex and discover secrets.</li>
+          <li>Solve environmental and logical puzzles to progress.</li>
+          <li>Interact with terminals, access cards, and anomalies.</li>
+          <li>After 30 minutes, time resets — but knowledge is retained.</li>
+        </ul>
       </div>
 
       <section class="video-embed">
         <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kSpcKlaDORk?si=nytJJ5fHOK2eFznF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </section>
 
-      <div class="deck-card">
-        <h3>Features</h3>
+      <div class="deck-card" id="KeyFeatures">
+        <h3>Key Features</h3>
         <ul>
-          <li>First-person immersive mechanics</li>
-          <li>Looping narrative with dynamic environmental changes</li>
-          <li>Custom sound design and original score</li>
-          <li>Built with Unity using C#, Shader Graph, and Timeline</li>
+          <li>Time-loop mechanic with persistent narrative progression</li>
+          <li>Environmental storytelling and diegetic interactivity</li>
+          <li>Surveillance systems and AI-controlled spaces</li>
+          <li>Latent choice and morally ambiguous decision-making</li>
+          <li>Physics-based object manipulation introduced later in the loop</li>
         </ul>
       </div>
 
-      <div class="deck-card">
+      <div class="deck-card" id="EDLights">
+        <h3>Environmental Design: Diegetic Interaction</h3>
+        <div class="video-player">
+          <video autoplay loop muted playsinline>
+            <source src="../img/Recursion/Diegetic.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="caption">
+            Dynamic lighting simulating unstable facility infrastructure. Flickering lights are used to build tension, signal environmental changes, and hint at environmental disturbances.
+          </p>
+        </div>
+      </div> 
+
+      <div class="deck-card" id="EDLights">
+        <h3>Environmental Design: Light Flicker</h3>
+        <div class="video-player">
+          <video autoplay loop muted playsinline>
+            <source src="../img/Recursion/Unity_t0wHejeo5a.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="caption">
+            Dynamic lighting simulating unstable facility infrastructure. Flickering lights are used to build tension, signal environmental changes, and hint at environmental disturbances.
+          </p>
+        </div>
+      </div>
+
+      <div class="deck-card" id="HRRoomTracking">
+        <h3>Environmental Design: Room Tracking</h3>
+        <div class="video-player">
+          <video autoplay loop muted playsinline>
+            <source src="../img/Recursion/RoomDemo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="caption">
+            Dynamic lighting simulating unstable facility infrastructure. Flickering lights are used to build tension, signal environmental changes, and hint at environmental disturbances.
+          </p>
+        </div>
+      </div>
+
+      <div class="deck-card" id="SettingsAndThemes">
+        <h3>Setting & Themes</h3>
+        <p>
+          The facility is a brutalist office complex hiding experimental research and anomalies. While outwardly mundane, it becomes increasingly distorted as loops progress. Themes include control vs. resistance, enforced productivity, latent freedom, and the ethical use of technology.
+        </p>
+      </div>
+
+      <div class="deck-card" id="DevNotes">
         <h3>Development Notes</h3>
-        <p>Development began as part of a capstone university project. The game prototype demonstrates interactive systems such as access cards, branching terminals, and dynamic lighting.</p>
+        <p>
+          Developed as part of a university capstone project. Built in Unity using C#, Shader Graph, Timeline, and custom sound design. Systems include door access control, terminals, anomaly triggers, and dynamic lighting feedback. A looping prototype vertical slice is the current milestone.
+        </p>
+      </div>
+
+      <div class="deck-card" id="GameDesignDocument">
+        <h3>Game Design Document</h3>
+        <a class="btn" href="../docs/Recursion_GDD.pdf" target="_blank">Game Design Document</a>
       </div>
     </section>
   </main>
