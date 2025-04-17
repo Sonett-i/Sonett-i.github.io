@@ -739,3 +739,29 @@ pre.code-wrapper {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: none;
+  padding: 0.5em 0.8em;
+  border-radius: 0.25em;
+  font-size: 1.5em;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+#scrollTopBtn:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+}
