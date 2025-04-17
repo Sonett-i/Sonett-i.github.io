@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pathfinding – Sam Catcheside</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <script src="../js/carousel.js" defer></script>
+</head>
+<body>
+    <a class="back-link" href="../index.html">← Back to Portfolio</a>
+  <a class="back-link2" href="../projects.html">← Back to Projects</a>
+
+  <header>
+    <h1>SAT Collision Detection</h1>
+    <p>Robust 2D collision detection using the Separating Axis Theorem (SAT)</p>
+  </header>
+
+  <main>
+    <section class="deck">
+      <div class="deck-card">
+        <h3>Overview</h3>
+        <p>This project demonstrates a real-time implementation of SAT for collision detection between convex polygons. It includes visualization tools for debugging normals, penetration depth, and contact points.</p>
+      </div>
+
+      <div class="deck-card">
+        <h3>Core Concepts</h3>
+        <ul>
+          <li>Convex polygon projections onto axes</li>
+          <li>Detection of overlap intervals</li>
+          <li>Resolution using minimum penetration vector</li>
+          <li>Dynamic object support (velocity-aware)</li>
+        </ul>
+      </div>
+
+      <div class="deck-card">
+        <h3>Demo</h3>
+        <video autoplay loop muted playsinline class="carousel-video">
+          <source src="media/sat_demo.mp4" type="video/mp4">
+        </video>
+        <p class="caption">Live debug rendering of contact normals and overlap resolution</p>
+      </div>
+
+      <div class="deck-card">
+        <h3>Technologies</h3>
+        <ul>
+          <li>C# with custom rendering loop</li>
+          <li>Debug overlays for normals and contact vectors</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Sam Catcheside – All rights reserved
+  </footer>
+</body>
+</html>
+
+<!--https://sonetti.itch.io/ai-pathfinding-->

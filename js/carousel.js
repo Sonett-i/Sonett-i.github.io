@@ -127,4 +127,92 @@ document.addEventListener('DOMContentLoaded', () => {
     showQuote(current);
     setInterval(nextQuote, 8000); // change quote every 8s
   });
-  
+
+// Clickable image gallery
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.createElement('div');
+  modal.className = 'image-modal';
+
+  const dots = document.createElement('div');
+  dots.className = 'image-dots';
+  modal.appendChild(dots);
+
+  const img = document.createElement('img');
+  const caption = document.createElement('div');
+  caption.className = 'image-caption';
+
+  const nav = document.createElement('div');
+  nav.className = 'image-nav';
+
+  const prevBtn = document.createElement('button');
+  prevBtn.innerHTML = '‹';
+  const nextBtn = document.createElement('button');
+  nextBtn.innerHTML = '›';
+
+  nav.appendChild(prevBtn);
+  nav.appendChild(nextBtn);
+
+  modal.appendChild(img);
+  modal.appendChild(caption);
+  modal.appendChild(nav);
+  document.body.appendChild(modal);
+
+  const images = Array.from(document.querySelectorAll('img.clickable'));
+  let currentIndex = 0;
+
+  function showImage(index) {
+    const image = images[index];
+    if (!image) return;
+
+    currentIndex = index;
+    img.src = image.src;
+    caption.textContent = image.alt || '';
+    modal.style.display = 'flex';
+    dots.innerHTML = '';
+    
+    images.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'image-dot';
+      if (i === index) dot.classList.add('active');
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showImage(i);
+      });
+      dots.appendChild(dot);
+    });
+
+  }
+
+  function hideModal() {
+    modal.style.display = 'none';
+    img.src = '';
+    caption.textContent = '';
+  }
+
+  images.forEach((image, index) => {
+    image.addEventListener('click', () => showImage(index));
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal || e.target === caption) hideModal();
+  });
+
+  prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showImage((currentIndex - 1 + images.length) % images.length);
+  });
+
+  nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showImage((currentIndex + 1) % images.length);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (modal.style.display === 'flex') {
+      if (e.key === 'ArrowLeft') prevBtn.click();
+      if (e.key === 'ArrowRight') nextBtn.click();
+      if (e.key === 'Escape') hideModal();
+    }
+  });
+});
