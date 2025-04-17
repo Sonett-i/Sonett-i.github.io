@@ -1,0 +1,105 @@
+* 02869fe (origin/RED-40-Storeroom, RED-40-Storeroom) RED-40: Details, exterior bg
+* 6c538be RED-40: 4th april work
+* aad1c52 RED-40: Fix up keycard mechanic
+* 5c96648 RED-40: Storeroom mechanics
+*   da1c5d2 (HEAD -> main, origin/main, origin/HEAD) Merge pull request #15 from Sonett-i/RED-39-HR-Surveillance
+|\  
+| * efb8ec4 (origin/RED-39-HR-Surveillance, RED-39-HR-Surveillance) RED-39: Surveillance, blackouts - pending SFX and other atmospheric effects
+| * 184ce82 RED-39: HR surveillance and bugs
+|/  
+*   de82067 Merge pull request #14 from Sonett-i/RED-38-Time-Reset-Mechanic
+|\  
+| * df29ca8 (origin/RED-38-Time-Reset-Mechanic, RED-38-Time-Reset-Mechanic) RED-38: Reset and HR and HR broadcast added
+|/  
+*   8721847 Merge pull request #13 from Sonett-i/RED-37-Align-Player-Model-with-Camera
+|\  
+| * 2fb01f3 (origin/RED-37-Align-Player-Model-with-Camera, RED-37-Align-Player-Model-with-Camera) RED-37: Align player body with camera using coroutines
+| * 46870a3 RED-37: Align player body with camera pan
+|/  
+*   8e6aba9 Merge pull request #12 from Sonett-i/RED-36-Level-Manager
+|\  
+| * 73d5b39 (origin/RED-36-Level-Manager, RED-36-Level-Manager) RED-36: Default Camera angle, elevator door, level load sequence
+|/  
+*   758eaf4 Merge pull request #11 from Sonett-i/RED-31-Light-Controls
+|\  
+| * 676943b (origin/RED-31-Light-Controls, RED-31-Light-Controls) RED-31: light controls and room controls
+| * bf738c9 RED-31: Debug handles
+| * 794ebc6 RED-31: Add room layout and structure
+* | eb567c1 Merge pull request #10 from Sonett-i/RED-31-Light-Controls
+|\| 
+| * 8cbe425 RED-31: light controls and radio toggle
+|/  
+*   e6b6c8f Merge pull request #9 from Sonett-i/RED-30-Sound-Emitters
+|\  
+| * 8d0c1a8 (origin/RED-30-Sound-Emitters, RED-30-Sound-Emitters) RED-30: Sound Emitters and Controllers
+| * 4d68fc2 RED-30: Sound, clocks
+|/  
+* 76327ad Undocumented work
+*   33f2613 Merge pull request #8 from Sonett-i/RED-28-Doors
+|\  
+| * 1b1c514 (origin/RED-28-Doors, RED-28-Doors) RED-28 Simple door animations and open states
+| * 49f2666 RED-28: Door Open close functions and interact transform
+| * c2ae4e0 RED-28: keycard access
+| * 6aeef08 RED-28 accesscardreader colours
+| * a5445ae RED-28: Access card
+| * b194f65 RED-28: Start interacting with the world
+| * 7123cd2 RED-28: Item interactivity tooltips
+| * 19eef4c RED-28: Tidy up scene
+|/  
+*   56a4b16 Merge pull request #7 from Sonett-i/RED-27-Level-Graybox
+|\  
+| * 5cb4cf9 (origin/RED-27-Level-Graybox, RED-27-Level-Graybox) RED-27: level greybox
+| * cf3a2f8 RED-27: elevator entry
+| * 59feb6a RED-27: Level graybox
+|/  
+*   9b3e52c Merge pull request #6 from Sonett-i/RED-11-Physics-Grab-Mechanic
+|\  
+| * 8de5309 (origin/RED-11-Physics-Grab-Mechanic, RED-11-Physics-Grab-Mechanic) RED-11: Physics Grab
+| * ced00a1 RED-11: Grab and freeze mechanic
+| * 2b0a35e RED-11: DB_Highlight
+| * c73264e RED-11: Targeting
+| * 81c362f RED-11: targetsystem
+| * 1680659 RED-11: highlight and highlightinstance class
+| * 61c64b9 RED-11: Highlight Shader and supportive subgraphs
+| * 8f9a1dd RED-11: Props and post processing
+| * 436792c RED-11: Primary fire and secondary fire registering
+| * 015aaef RED-11: Fire and stop fire working
+| * dbd1243 RED-11: Weapon events incoming
+| * d65ac72 RED-11: easy input
+| * 16e3157 RED-11: EventTimers for smart key press events
+| * c5a9fa5 RED-11: WeaponSlot and Physics Gun Start
+|/  
+*   45e53b1 Merge pull request #5 from Sonett-i/RED-17-Ground-Check
+|\  
+| * ab259bd (origin/RED-17-Ground-Check, RED-17-Ground-Check) RED-17: Ground check bool and playerreferences
+| * e4784b5 RED-17: Trigger icons
+| * 1a15552 RED-17: Adjusted raysensor to work with transform forward, allows for more freedom
+|/  
+*   4587d28 Merge pull request #4 from Sonett-i/RED-16-Camera-Raycast
+|\  
+| * 94e011a (origin/RED-16-Camera-Raycast, RED-16-Camera-Raycast) need to pull this too
+* | 0caea0d Merge pull request #3 from Sonett-i/RED-16-Camera-Raycast
+|\| 
+| * 9cf1bb5 RED-16: Cursor raycast working - tidy code
+| * 4e44a68 RED-16: Cursor raycast working
+| * 4e0838b test2
+| * 0c3a1d4 test
+| * 991d78b RED-16: raycast from screen middle, cinemachine camera disable
+| * b05caa2 RED-16: Raycast from transform forward, but need to do cone for FOV
+|/  
+*   d1659fc Merge pull request #2 from Sonett-i/RED-15-Raycast-Utilities
+|\  
+| * 9adfd80 (origin/RED-15-Raycast-Utilities, RED-15-Raycast-Utilities) RED-15: Area Sensor, RadialSensor, RaySensor
+|/  
+*   6c41ca2 Merge pull request #1 from Sonett-i/RED-6-Player-Controller
+|\  
+| * 9329c0c (origin/RED-6-Player-Controller, RED-6-Player-Controller) RED-6: FPS movement
+| * 9fd5a13 RED-6: Add cinemachine, smooth first person camera look
+| * 95cca98 RED-6: Character movement relative to camera orientation
+| * 263a509 RED-6: First person character controller
+|/  
+* 445b496 main commit
+* dca9aec grid shader
+* 7ed3352 Grid shader
+* 38d2f73 init
+* 2d332be Initial commit
