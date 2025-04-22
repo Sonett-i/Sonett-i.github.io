@@ -47,6 +47,19 @@
     max-width: 800px;
     margin: 0 auto;
   }
+
+  .tagline {
+    font-size: 1.4rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+  }
+  
+  .statement {
+    font-size: 1.1rem;
+    margin: 1.5rem auto 2rem;
+    max-width: 700px;
+    color: #aaa;
+  }  
   
   .button-row {
     display: flex;
